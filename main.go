@@ -31,8 +31,8 @@ func main() {
 	logs.Reference5 = "aaa"
 	logs.Request = "aaa"
 	logs.Response = "aaa"
-	logs.Start = t0.String()
-	logs.End = t1.String()
+	logs.Start = t0.Format(time.RFC3339Nano)
+	logs.End = t1.Format(time.RFC3339Nano)
 	logs.Duration = t2.String()
 
 	err := logs.InsertappLog("applog01.log", "Hello world!")
@@ -58,8 +58,8 @@ func main() {
 	logsWF.Reference3 = "aaa"
 	logsWF.Reference4 = "aaa"
 	logsWF.Reference5 = "aaa"
-	logsWF.Start = t0.Format("2006-01-02 15:04:05")
-	logsWF.End = t1.Format("2006-01-02 15:04:05")
+	logsWF.Start = t0.Format(time.RFC3339Nano)
+	logsWF.End = t1.Format(time.RFC3339Nano)
 	logsWF.Duration = t2.String()
 
 	arrpsCfg := []l.Processconfig{}
@@ -68,8 +68,8 @@ func main() {
 	t1 = time.Now()
 	t2 = t1.Sub(t0)
 	psCfg.CallFunction = "bbbb1"
-	psCfg.Start = t0.String()
-	psCfg.End = t1.String()
+	psCfg.Start = t0.Format(time.RFC3339Nano)
+	psCfg.End = t1.Format(time.RFC3339Nano)
 	psCfg.ResultCode = "bbbb1"
 	psCfg.ResultDesc = "bbbb1"
 	arrpsCfg = append(arrpsCfg, psCfg)
@@ -78,8 +78,8 @@ func main() {
 	t1 = time.Now()
 	t2 = t1.Sub(t0)
 	psCfg.CallFunction = "bbbb2"
-	psCfg.Start = t0.String()
-	psCfg.End = t1.String()
+	psCfg.Start = t0.Format(time.RFC3339Nano)
+	psCfg.End = t1.Format(time.RFC3339Nano)
 	psCfg.ResultCode = "bbbb2"
 	psCfg.ResultDesc = "bbbb2"
 	arrpsCfg = append(arrpsCfg, psCfg)
